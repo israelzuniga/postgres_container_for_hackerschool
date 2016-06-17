@@ -10,4 +10,5 @@ RUN chmod 755 /docker-entrypoint-initdb.d/remote_connections_setup.sh
 ADD init-user-db.sh /docker-entrypoint-initdb.d/init-user-db.sh
 RUN init-user-db.sh /docker-entrypoint-initdb.d/init-user-db.sh
 ADD dvdrental.tar
-RUN pg_restore -U postgres -d dvdrental dvdrental.tar
+ADD setup_database.sh /docker-entrypoint-initdb.d/setup_database.sh
+RUN /docker-entrypoint-initdb.d/setup_database.sh

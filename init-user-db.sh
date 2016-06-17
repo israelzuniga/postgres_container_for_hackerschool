@@ -4,7 +4,7 @@ TEST=`gosu postgres postgres --single <<- EOSQL
 	SELECT 1 FROM pg_database WHERE datname='$DB_NAME';
 EOSQL`
 
-echo ""
+echo "SETTING UP THE DATABASE"
 if [[ $TEST == "1" ]]; then
 	 # database exists
 	 # $? is 0
