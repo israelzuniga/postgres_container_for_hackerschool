@@ -1,6 +1,6 @@
 #
 
-FROM postgres:9:5
+FROM postgres:9.5
 ENV LANG en_US.utf8
 
 MANTAINER Israel Zúñiga de la Mora <docker@israelzuniga.com>
